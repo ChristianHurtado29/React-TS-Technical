@@ -1,5 +1,5 @@
 // Can we consolidate this typing?
-interface Trending  {
+export interface Trending  {
   document_id: number;
   count: number;
   document_type: string;

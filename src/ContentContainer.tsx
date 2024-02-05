@@ -3,12 +3,14 @@ import DisplayContainer from "./DisplayContainer";
 import FormContainer from "./FormContainer";
 import primeFactorize from "./utils";
 
+export type Field = "first" | "last"
 
-const ContentContainer = ({name, handleNameUpdate}: { name: Name, handleNameUpdate:(field: "first" | "last", newName: string) => void }) => {
+
+const ContentContainer = ({name, handleNameUpdate}: { name: Name, handleNameUpdate:(field: Field , newName: string) => void }) => {
 
   const numOfFactors =() => {
     // This takes a long time to run
-    return primeFactorize(100000000000000000).length
+    return primeFactorize().length
   }
   
 

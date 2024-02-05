@@ -1,4 +1,6 @@
-const TextInput = ({ value, handleNameUpdate, name }: { name: string, value: string, handleNameUpdate:(field: "first" | "last", newName: string) => void } ) => {
+import { Field } from "./ContentContainer";
+
+const TextInput = ({ value, handleNameUpdate, name }: { name: string, value: Field, handleNameUpdate:(field: "first" | "last", newName: string) => void } ) => {
   return (
     <div className="field">
       {`${value}: `}

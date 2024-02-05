@@ -10,7 +10,7 @@ function isPrime(n: number) {
   return true;
 }
 
-export default function primeFactorize(n: number) {
+export default function primeFactorize() {
   const start = performance.now()
   const numbers = Array.from({ length: 1000000 }, (_, index) => index);
   const primes = numbers.filter(num => isPrime(num))

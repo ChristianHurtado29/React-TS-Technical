@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ContentContainer from "./ContentContainer";
-import { getTrending } from "./api";
+import { Trending, getTrending } from "./api";
 
 export type Name = {first: string, last: string}
 
@@ -9,7 +9,7 @@ function App() {
     first: "",
     last: "",
   });
-  const [trendingRecipes, setTrendingRecipes] = useState()
+  const [trendingRecipes, setTrendingRecipes] = useState<Trending>()
 
   const handleNameUpdate=(field: keyof typeof name, newName: string) => {
     setName((prevState) => {
@@ -30,8 +30,9 @@ function App() {
       <div className="container">
         <h5>App</h5>
         <ContentContainer handleNameUpdate={handleNameUpdate} name={name} />
-        {/* Render a component here that displays the title and userRatingsCount (IF there is an associated rating object on the returned data) of the
-        first item coming back from the fetchTrending function in the useEffect */}
+        {/* Render a component here that renders a list of trending items from the getTrending api function.
+         Display the title and userRatingsCount (Default the userRatingsCount to 0 if the field is null or missing in the api response) 
+         */}
       </div>
  
   );

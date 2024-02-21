@@ -6,8 +6,10 @@ export default function TrendingItems({trendingRecipes}:{trendingRecipes:Trendin
         return <Item key={recipe.document_id} recipe={recipe}/>
     })
     return (
-        <ul>
-            {recipes}
-        </ul>
+        <div className="container">
+            <ul>
+                {recipes}
+            </ul>
+        </div>
     )
 }
